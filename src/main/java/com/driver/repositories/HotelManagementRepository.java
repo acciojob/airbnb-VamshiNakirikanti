@@ -1,6 +1,7 @@
 package com.driver.repositories;
 
 import com.driver.model.Booking;
+import com.driver.model.Facility;
 import com.driver.model.Hotel;
 import com.driver.model.User;
 import org.springframework.stereotype.Repository;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.UUID;
 
 @Repository
@@ -92,5 +94,16 @@ public class HotelManagementRepository {
             return userWithBookingsMap.get(aadharCard).size();
         }
         return 0;
+    }
+
+    public Hotel updateFacilities(List<Facility> newFacilities, String hotelName) {
+        Hotel hotel = getHotelFromName(hotelName);
+        List<Facility> hotelFacilites = hotel.getFacilities();
+        for(Facility facility:newFacilities){
+            if(!hotelFacilites.contains(facility)){
+                hotelFacilites.add(facility);
+            }
+        }
+        return hotel;
     }
 }
