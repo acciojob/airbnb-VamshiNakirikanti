@@ -1,6 +1,7 @@
 package com.driver.services;
 
 import com.driver.model.Hotel;
+import com.driver.model.User;
 import com.driver.repositories.HotelManagementRepository;
 import org.springframework.stereotype.Service;
 
@@ -23,5 +24,9 @@ public class HotelManagementService {
 
     public boolean checkHotelExists(Hotel hotel){
         return hotelManagementRepository.checkHotelExists(hotel);
+    }
+
+    public Integer addUser(User user) {
+        return hotelManagementRepository.addUser(user);
     }
 }
