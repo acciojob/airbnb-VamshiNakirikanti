@@ -1,5 +1,6 @@
 package com.driver.services;
 
+import com.driver.model.Booking;
 import com.driver.model.Hotel;
 import com.driver.model.User;
 import com.driver.repositories.HotelManagementRepository;
@@ -34,5 +35,13 @@ public class HotelManagementService {
 
     public String getHotelWithMostFacilities() {
         return hotelManagementRepository.getHotelWithMostFacilities();
+    }
+
+    public int bookARoom(Booking booking) {
+        return hotelManagementRepository.bookARoom(booking);
+    }
+
+    public int getBookings(Integer aadharCard) {
+        return hotelManagementRepository.getBookings(aadharCard);
     }
 }
