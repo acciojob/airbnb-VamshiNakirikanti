@@ -48,8 +48,7 @@ public class HotelManagementController {
         //Out of all the hotels we have added so far, we need to find the hotelName with most no of facilities
         //Incase there is a tie return the lexicographically smaller hotelName
         //Incase there is not even a single hotel with atleast 1 facility return "" (empty string)
-
-        return null;
+        return hotelManagementService.getHotelWithMostFacilities();
     }
 
     @PostMapping("/book-a-room")

@@ -5,6 +5,8 @@ import com.driver.model.User;
 import com.driver.repositories.HotelManagementRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+
 @Service
 public class HotelManagementService {
 
@@ -28,5 +30,9 @@ public class HotelManagementService {
 
     public Integer addUser(User user) {
         return hotelManagementRepository.addUser(user);
+    }
+
+    public String getHotelWithMostFacilities() {
+        return hotelManagementRepository.getHotelWithMostFacilities();
     }
 }
